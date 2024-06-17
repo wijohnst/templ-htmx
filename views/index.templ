@@ -1,6 +1,14 @@
 package views
 
+import "github.com/wijohnst/templ-htmx/views/components"
+
 templ Index() {
+	<style type="text/css">
+        div {
+            font-family: 'Roboto', serif;
+        }
+    </style>
+	@components.Head()
 	<div>
 		Hello, World 
 	</div>

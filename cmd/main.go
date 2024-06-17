@@ -2,15 +2,15 @@ package main
 
 import (
 	"github.com/gin-gonic/gin"
-	"github.com/wijohnst/templ-htmx/views"
+	"github.com/wijohnst/templ-htmx/internal"
 )
 
 func main() {
 	router := gin.Default()
 
-	router.GET("/", func(c *gin.Context) {
-		views.Index().Render(c, c.Writer)
-	})
+	app := internal.Providers{Router: router}
+
+	app.Routes()
 
 	router.Run(":2621")
 }
